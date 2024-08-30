@@ -2,8 +2,8 @@
 
 namespace Desafio.B3.Business.Interfaces
 {
-    public interface ICDBService
+    public interface ICdbService
     {
-        double ObterCalculo(CDB cdb);
+        double ObterCalculo(Cdb cdb);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Desafio.B3.Business.Domain
 {
-    public class CDBValidation
+    public static class CdbValidation
     {
         public static void ApenasNumerosPositivos(double target, string fieldName)
         {            
