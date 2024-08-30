@@ -4,10 +4,7 @@
     {
         public override double ObterImposto(int mes)
         {
-            if (mes > 24)
-                return 15.0;
-
-            return base.ObterImposto(mes);            
+            return 15.0;                      
         }
     }
 }

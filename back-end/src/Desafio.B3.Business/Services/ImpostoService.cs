@@ -1,10 +1,11 @@
 ﻿using Desafio.B3.Business.Interfaces;
+using Desafio.B3.Business.Services.TabelaImposto;
 
 namespace Desafio.B3.Business.Services
 {
     public abstract class ImpostoService : IImpostoService
     {
-        public double ObterCalcula(double valorMonetario, double valorBruto, double imposto)
+        public double ObterCalculo(double valorMonetario, double valorBruto, double imposto)
         {
             var valoFinal = 0.0;
 
@@ -15,7 +16,7 @@ namespace Desafio.B3.Business.Services
 
         public virtual double ObterImposto(int mes)
         {
-            return 0.0; 
+            return new ImpostoAte6MesesService().ObterImposto(mes); 
         }            
     }
 }
