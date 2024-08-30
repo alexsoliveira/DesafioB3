@@ -1,6 +1,6 @@
 @Desafio.B3.Server_HostAddress = http://localhost:5270
 
-GET {{Desafio.B3.Server_HostAddress}}/weatherforecast/
+GET {{Desafio.B3.Server_HostAddress}}/cdb/
 Accept: application/json
 
 ###

@@ -1,30 +1,22 @@
+using Desafio.B3.Api.Configurations;
 
 namespace Desafio.B3.Server
 {
-    public class Program
+    public static class Program
     {
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            builder.Services.AddAndConfigureControllers();            
 
-            builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            builder.Services.ResolveDependencies();
 
             var app = builder.Build();
 
-            app.UseDefaultFiles();
-            app.UseStaticFiles();
-
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
+            app.UseDocumentation();            
 
             app.UseHttpsRedirection();
 
@@ -36,6 +28,6 @@ namespace Desafio.B3.Server
             app.MapFallbackToFile("/index.html");
 
             app.Run();
-        }
+        }        
     }
 }
