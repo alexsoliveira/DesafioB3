@@ -6,7 +6,7 @@ namespace Desafio.B3.UnitTests.Common
     {
         public Faker Faker { get; set; }
 
-        public BaseFixture()
+        protected BaseFixture()
             => Faker = new Faker("pt_BR");
     }
 }

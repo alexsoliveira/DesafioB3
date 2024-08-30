@@ -2,7 +2,7 @@
 using Desafio.B3.Business.Exceptions;
 using Desafio.B3.Business.Validation;
 using FluentAssertions;
-using CDBValidation = Desafio.B3.Business.Domain.CDBValidation;
+using CdbValidation = Desafio.B3.Business.Domain.CdbValidation;
 
 namespace Desafio.B3.UnitTests.Validation
 {
@@ -33,7 +33,7 @@ namespace Desafio.B3.UnitTests.Validation
         public void ApenasNumerosPositivos(double valorMonetario)
         {
             Action action =
-                () => CDBValidation.ApenasNumerosPositivos(valorMonetario, "Monetário");
+                () => CdbValidation.ApenasNumerosPositivos(valorMonetario, "Monetário");
 
             action.Should()
                 .Throw<EntityValidationException>()
@@ -65,7 +65,7 @@ namespace Desafio.B3.UnitTests.Validation
         public void ApenasNumerosInteirosMaiorQueUm(int mes)
         {
             Action action =
-                () => CDBValidation.ApenasNumerosInteirosMaiorQueUm(mes, "Mês");
+                () => CdbValidation.ApenasNumerosInteirosMaiorQueUm(mes, "Mês");
 
             action.Should()
                 .Throw<EntityValidationException>()

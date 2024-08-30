@@ -14,9 +14,9 @@ namespace Desafio.B3.UnitTests.Service
         [InlineData(100.0, 5, 104.95540120180826)]
         public void CalcularCDBLiquido(double cdbMonetario, int cdbMes, double resultado)
         {
-            ICDBService cdb = new CDBService();
+            ICdbService cdb = new CdbService();
 
-            var valorFinal = cdb.ObterCalculo(new CDB(cdbMonetario, cdbMes));
+            var valorFinal = cdb.ObterCalculo(new Cdb(cdbMonetario, cdbMes));
 
             valorFinal.Should().NotBe(null);
             valorFinal.Should().Be(resultado);

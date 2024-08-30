@@ -76,7 +76,7 @@ namespace Desafio.B3.UnitTests.Service.TabelaImposto
             IImpostoService imposto = new ImpostoAte6MesesService();            
 
             var valorImposto = imposto.ObterImposto(mes);
-            var valorLiquido = imposto.ObterCalcula(valorMonetario, valorBruto, valorImposto);
+            var valorLiquido = imposto.ObterCalculo(valorMonetario, valorBruto, valorImposto);
 
             valorLiquido.Should().NotBe(null);
             valorLiquido.Should().Be(resultado);
