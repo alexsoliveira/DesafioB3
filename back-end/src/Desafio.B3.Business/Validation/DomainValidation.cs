@@ -2,7 +2,7 @@
 
 namespace Desafio.B3.Business.Validation
 {
-    public class DomainValidation
+    public static class DomainValidation
     {
         public static void ApenasNumeros(string? target, string fieldName)
         {
