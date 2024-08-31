@@ -1,0 +1,36 @@
+version: '3.4'
+
+services:
+    desafio.b3.api:
+        image: desafio-b3-api:latest
+        container_name: desafio.b3.api
+        build:
+            context: ./back-end/src
+            dockerfile: ./Desafio.B3.Api/Dockerfile
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+            - ASPNETCORE_HTTP_PORTS=5000
+            - ASPNETCORE_HTTPS_PORTS=5001
+            - ASPNETCORE_URLS=http://*:5000
+        ports:
+            - "5000:5000"
+            - "5001:5001"
+        networks:
+            - desafio-b3-networks
+        
+    desafio.b3.client:
+        image: desafio-b3-client:latest
+        container_name: desafio.b3.client
+        build:
+            context: ./front-end
+            dockerfile: ./desafio.b3.client/Dockerfile              
+        ports:
+            - "4200:4200"
+        depends_on:
+            - desafio.b3.api
+        networks:
+            - desafio-b3-networks
+  
+networks:
+  desafio-b3-networks:    
+    driver: bridge
