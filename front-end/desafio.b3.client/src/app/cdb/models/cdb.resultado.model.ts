@@ -1,4 +1,4 @@
 export interface CdbResultado{
-    valorBruto: number,
-    valorLiquido: number,
+    bruto: number,
+    liquido: number,
 }
