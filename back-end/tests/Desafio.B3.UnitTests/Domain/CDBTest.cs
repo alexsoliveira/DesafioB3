@@ -4,12 +4,12 @@ using FluentAssertions;
 
 namespace Desafio.B3.UnitTests.Domain
 {
-    [Collection(nameof(CDBTestFixture))]
+    [Collection(nameof(CdbTestFixture))]
     public class CDBTest
     {
-        private readonly CDBTestFixture _fixture;
+        private readonly CdbTestFixture _fixture;
 
-        public CDBTest(CDBTestFixture fixture)
+        public CDBTest(CdbTestFixture fixture)
             => _fixture = fixture;
 
         [Fact(DisplayName = nameof(InstanciaCDB))]
@@ -18,7 +18,7 @@ namespace Desafio.B3.UnitTests.Domain
         {
             var cdbValido = _fixture.ObterCDBValido();
 
-            var cdb = new CDB(cdbValido.ValorMonetario, cdbValido.Mes);
+            var cdb = new Cdb(cdbValido.ValorMonetario, cdbValido.Mes);
 
             cdb.Should().NotBeNull();
             cdb.ValorMonetario.Should().Be(cdbValido.ValorMonetario);
@@ -32,7 +32,7 @@ namespace Desafio.B3.UnitTests.Domain
             var cdbValido = _fixture.ObterCDBValido();
             var valorMonetario = _fixture.ObterValorMonetarioValido();
 
-            var cdb = new CDB(valorMonetario, cdbValido.Mes);
+            var cdb = new Cdb(valorMonetario, cdbValido.Mes);
 
             cdb.Should().NotBeNull();
             cdb.ValorMonetario.Should().Be(valorMonetario);
@@ -46,7 +46,7 @@ namespace Desafio.B3.UnitTests.Domain
             var cdbValido = _fixture.ObterCDBValido();
             var mes = _fixture.ObterMesValido();
 
-            var cdb = new CDB(cdbValido.ValorMonetario, mes);
+            var cdb = new Cdb(cdbValido.ValorMonetario, mes);
 
             cdb.Should().NotBeNull();
             cdb.ValorMonetario.Should().Be(cdbValido.ValorMonetario);
@@ -62,7 +62,7 @@ namespace Desafio.B3.UnitTests.Domain
         {
             var cdbValido = _fixture.ObterCDBValido();
 
-            var cdb = new CDB(valorMonetario, cdbValido.Mes);
+            var cdb = new Cdb(valorMonetario, cdbValido.Mes);
 
             cdb.Should().NotBeNull();
             cdb.ValorMonetario.Should().Be(valorMonetario);
@@ -78,7 +78,7 @@ namespace Desafio.B3.UnitTests.Domain
         {
             var cdbValido = _fixture.ObterCDBValido();            
 
-            var cdb = new CDB(cdbValido.ValorMonetario, mes);
+            var cdb = new Cdb(cdbValido.ValorMonetario, mes);
 
             cdb.Should().NotBeNull();
             cdb.ValorMonetario.Should().Be(cdbValido.ValorMonetario);
@@ -94,7 +94,7 @@ namespace Desafio.B3.UnitTests.Domain
         {
             var cdbValido = _fixture.ObterCDBValido();
 
-            Action action = () => new CDB(valorMonetario, cdbValido.Mes);
+            Action action = () => new Cdb(valorMonetario, cdbValido.Mes);
 
             action.Should()
                 .Throw<EntityValidationException>()
@@ -110,7 +110,7 @@ namespace Desafio.B3.UnitTests.Domain
         {
             var cdbValido = _fixture.ObterCDBValido();
 
-            Action action = () => new CDB(cdbValido.ValorMonetario, mes);
+            Action action = () => new Cdb(cdbValido.ValorMonetario, mes);
 
             action.Should()
                 .Throw<EntityValidationException>()

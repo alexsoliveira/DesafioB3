@@ -12,6 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.SpaProxy">
       <Version>8.*-*</Version>
     </PackageReference>
@@ -20,9 +21,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\desafio.b3.client\desafio.b3.client.esproj">
+    <ProjectReference Include="..\..\..\front-end\desafio.b3.client\desafio.b3.client.esproj">    
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="..\Desafio.B3.Business\Desafio.B3.Business.csproj" />
   </ItemGroup>
 
 </Project>

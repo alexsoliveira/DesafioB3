@@ -3,14 +3,14 @@ using Desafio.B3.UnitTests.Common;
 
 namespace Desafio.B3.UnitTests.Domain
 {
-    [CollectionDefinition(nameof(CDBTestFixture))]
-    public class CDBTestFixtureCollection
-        : ICollectionFixture<CDBTestFixture>
+    [CollectionDefinition(nameof(CdbTestFixture))]
+    public class CdbBTestFixtureCollection
+        : ICollectionFixture<CdbTestFixture>
     { }
 
-    public class CDBTestFixture : BaseFixture
+    public class CdbTestFixture : BaseFixture
     {
-        public CDBTestFixture()
+        public CdbTestFixture()
             : base() { }
 
         public double ObterValorMonetarioValido()
@@ -27,13 +27,12 @@ namespace Desafio.B3.UnitTests.Domain
         {
             var mes = 0;
 
-            if (mes < 2)
-                mes = new Random().Next(2, 24);
+            mes = new Random().Next(2, 24);
 
             return mes;
         }
 
-        public CDB ObterCDBValido()
+        public Cdb ObterCDBValido()
             => new(
                 ObterValorMonetarioValido(),
                 ObterMesValido()
