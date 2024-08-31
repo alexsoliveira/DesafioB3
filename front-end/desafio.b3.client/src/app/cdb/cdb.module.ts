@@ -8,6 +8,7 @@ import { CdbRoutingModule } from './cdb.route';
 
 import { CdbAppComponent } from './cdb.app.component';
 import { CdbCalculoComponent } from './calculo/cdb-calculo.component';
+import { CdbService } from './services/cdb.service';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,8 @@ import { CdbCalculoComponent } from './calculo/cdb-calculo.component';
     ReactiveFormsModule,
     HttpClientModule  
   ],
-  providers: [ ]
+  providers: [
+    CdbService
+  ]
 })
 export class CdbModule { }

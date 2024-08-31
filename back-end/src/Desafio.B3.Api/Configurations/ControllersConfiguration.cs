@@ -9,6 +9,27 @@ namespace Desafio.B3.Api.Configurations
             services.AddControllers(options
                 => options.Filters.Add(typeof(ApiGlobalExceptionFilter))
             );
+
+            services.AddCors(options =>
+            {
+                
+                options.AddPolicy("Development",
+                    builder =>
+                        builder
+                        .AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader());
+
+
+                options.AddPolicy("Production",
+                    builder =>
+                        builder
+                            .WithMethods("")
+                            .WithOrigins("")
+                            .SetIsOriginAllowedToAllowWildcardSubdomains()                            
+                            .AllowAnyHeader());
+            });
+
             services.AddDocumentation();
 
             return services;
@@ -26,6 +47,7 @@ namespace Desafio.B3.Api.Configurations
         {
             if (app.Environment.IsDevelopment())
             {
+                app.UseCors("Development");
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
