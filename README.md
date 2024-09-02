@@ -21,7 +21,7 @@ executar o comando abaixo:<br>
   "mes": 2
 }``
 
-**Sexto passo:** rodar os testes de unidade, integração e end to end, executa o comando abaixo:<br>
+**Sexto passo:** rodar os testes de unidade, executa o comando abaixo:<br>
 **cd .\back-end\tests\Desafio.B3.UnitTests** <br>
 **dotnet test** <br>
 
