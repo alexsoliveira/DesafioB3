@@ -11,12 +11,12 @@ executar o comando abaixo:<br>
 **docker compose up -d --build**
 
 **Quarto passo:** executa a url abaixo, no browser:<br>
-**[http://localhost:5000/swagger/index.html](http://localhost:4200/calculo)** <br>
+**[http://localhost:4200/calculo](http://localhost:4200/calculo)** <br>
 **Obs.: A primeira vez pode demorar um pouco para subir a aplicação**
 
 **Quinto passo:** para testar a api execura a url abaixo, no browse:<br>
 **[http://localhost:5000/swagger/index.html](http://localhost:5000/swagger/index.html)** clica na api **/api/v1/cdb** e executa  json abaixo:<br>
-``{{
+``{
   "valorMonetario": 100,
   "mes": 2
 }``
