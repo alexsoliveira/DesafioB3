@@ -1,4 +1,4 @@
-# Desafio Sistema de Gerenciamento de Tarefas
+# Desafio Sistema B3 cálculo do CDB
 
 **Primeiro passo:** baixa o projeto na máquina e executa a linha de comando abaixo:<br>
 **git clone https://github.com/alexsoliveira/DesafioB3.git**
